@@ -1,0 +1,30 @@
+To fix this, ensure that:
+
+1. **Tailwind CSS is correctly installed and configured:** Check your `tailwind.config.js` file to ensure that the correct paths are specified.
+2. **Tailwind directives are included in your CSS:**  Make sure you've added `@tailwind base;`, `@tailwind components;`, and `@tailwind utilities;` in your main CSS file (e.g., `styles.css`).
+3. **CSS specificity:** Other CSS rules might be overriding your Tailwind classes. Try adding `!important` to your Tailwind classes (as a last resort), or inspect the element in your browser's developer tools to identify conflicting styles.
+4. **Build process:**  If you're using a bundler like Webpack or Vite, ensure that your build process correctly handles Tailwind CSS.
+
+Here's an example of correctly configured HTML and CSS:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind Button</title>
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body>
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    Click Me
+  </button>
+</body>
+</html>
+```
+```css
+/* styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
